@@ -1,32 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Scheme Switcher</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive JavaScript color theme switcher demonstrating DOM events and CSS variables.">
+  <title>Color Scheme Switcher | Bhupal Singh Bhandari</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <nav class="navbar">
-        <button>Home</button>
-        <button>Youtube Channel</button>
-    </nav>
-
-    <section class="switcher-section">
-        <h1 class="heading">Color Scheme Switcher</h1>
-        <div class="box-collection">
-            <div id="box01">gray</div>
-            <div id ="box02">green</div>
-            <div id ="box03">blue</div>
-            <div id ="box04">yellow</div>
-        </div>
-        <h2>Try clicking on one ot the colors above to change the BG color</h2>
-    </section>
-
-    
-
-    
-    <script src="script.js"></script>
+  <main class="card">
+    <p class="eyebrow">JAVASCRIPT PROJECT</p>
+    <h1>Color Scheme Switcher</h1>
+    <p class="subtitle">Choose a theme to change the page background.</p>
+    <div class="swatches" role="group" aria-label="Color themes">
+      <button class="swatch gray" data-color="#d3d3d3" aria-label="Light gray theme"></button>
+      <button class="swatch green" data-color="#18a558" aria-label="Green theme"></button>
+      <button class="swatch blue" data-color="#2878e8" aria-label="Blue theme"></button>
+      <button class="swatch yellow" data-color="#f2d64b" aria-label="Yellow theme"></button>
+    </div>
+    <p id="status" class="status" role="status" aria-live="polite">Current theme: dark</p>
+    <button id="reset" class="reset">Reset theme</button>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
