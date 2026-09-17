@@ -1,23 +1,24 @@
-const buttons = document.querySelectorAll(".box-collection")
-const body = document.querySelector("body")
+const root = document.documentElement;
+const status = document.querySelector('#status');
+const resetButton = document.querySelector('#reset');
+const swatches = document.querySelectorAll('.swatch');
 
-buttons.forEach(function(button){
-    button.addEventListener("click", function(event){
-        if(event.target.id==="box01"){
-            body.style.backgroundColor = "#D3D3D3"
-        }
-         if(event.target.id==="box02"){
-            body.style.backgroundColor = "#00FF00"
-        }    
-        if(event.target.id==="box03"){
-            body.style.backgroundColor = "#1E90FF"
-        }    
-        if(event.target.id==="box04"){
-            body.style.backgroundColor = "#ffff84ff"
-        }        
-    })
-})
+function setTheme(color, name) {
+  document.body.style.backgroundColor = color;
+  status.textContent = `Current theme: ${name}`;
+}
 
+swatches.forEach((swatch) => {
+  swatch.addEventListener('click', () => {
+    const color = swatch.dataset.color;
+    const name = swatch.getAttribute('aria-label').replace(' theme', '').toLowerCase();
+    setTheme(color, name);
+  });
+});
 
+resetButton.addEventListener('click', () => {
+  document.body.style.backgroundColor = '#111';
+  status.textContent = 'Current theme: dark';
+});
 
-
+root.style.setProperty('color-scheme', 'dark');
